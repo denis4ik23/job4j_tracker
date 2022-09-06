@@ -26,7 +26,7 @@ public class Error {
         error.printInfo();
         Error error1 = new Error(true, 1, "ошибка 404");
         error1.printInfo();
-        Error error2 = new Error(true, 2 , "ошибка 401");
+        Error error2 = new Error(true, 2, "ошибка 401");
         error2.printInfo();
     }
 }
