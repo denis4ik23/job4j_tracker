@@ -21,6 +21,7 @@ public class TriangleTest {
         Point a = new Point(0, 1);
         Point b = new Point(1, 0);
         Point c = new Point(0, 1);
+        //
         Triangle triangle = new Triangle(a, b, c);
         double rsl = triangle.area();
         double expected = -1;
