@@ -6,9 +6,11 @@ import java.time.format.DateTimeFormatter;
 public class StartUI {
 
     public static void main(String[] args) {
-        LocalDateTime dataTime = new Item().getCreated();
+        Item item = new Item();
+        LocalDateTime dataTime = item.getCreated();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MMMM-EEEE-yyyy HH:mm:ss");
         String currentDateTimeFormat = dataTime.format(formatter);
         System.out.println("Текущие дата и время: " + currentDateTimeFormat);
+        System.out.println(item);
     }
 }
