@@ -33,13 +33,13 @@ class StartUITest {
     @Test
     public void whenDeleteItem() {
         Tracker tracker = new Tracker();
-        Item bug = new Item();
-        bug.setName("Bug");
-        tracker.add(bug);
-        int id = bug.getId();
-        Item bugWithDesc = new Item();
-        bugWithDesc.setName("Bug with description");
-        tracker.replace(id, bugWithDesc);
-        assertThat(tracker.findById(id).getName()).isEqualTo("Bug with description");
+        Item item = new Item("new item");
+        tracker.add(item);
+        String[] answers = {
+                String.valueOf(item.getId()), /* id сохраненной заявки в объект tracker. */
+                "edited item"
+        };
+        StartUI.deleteItem(new StubInput(answers), tracker);
+        assertThat(tracker.findById(item.getId())).isEqualTo(null);
     }
 }
